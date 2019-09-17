@@ -10,6 +10,14 @@ Nedan följer instruktioner hur du kan använda pluginet "region-halland-tree-al
 Denna plugin skapar ett navigationsträd för terapirek.regionhalland.se
 
 
+## Licensmodell
+
+Denna plugin använder licensmodell GPL-3.0. Du kan läsa mer om denna licensmodell via den medföljande filen:
+```sh
+LICENSE (https://github.com/RegionHalland/region-halland-tree-all-levels-terapirekommendationer/blob/master/LICENSE)
+```
+
+
 ## Installation och aktivering
 
 ```sh
@@ -77,6 +85,10 @@ OBS! Justera så att du hämtar aktuell version.
 
 
 ## Versionhistorik
+
+### 1.1.0
+- Lagt till information om licensmodell
+- Bifogat fil med licensmodell
 
 ### 1.0.0
 - Första version
