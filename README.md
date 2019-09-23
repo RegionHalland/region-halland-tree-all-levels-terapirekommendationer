@@ -86,6 +86,15 @@ OBS! Justera så att du hämtar aktuell version.
 
 ## Versionhistorik
 
+### 1.3.0
+Byggt om sorteringsfunktionen
+
+### 1.2.1
+- Justerade retur-array
+
+### 1.2.0
+- Justerad sql-fråga
+
 ### 1.1.0
 - Lagt till information om licensmodell
 - Bifogat fil med licensmodell

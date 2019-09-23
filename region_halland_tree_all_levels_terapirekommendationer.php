@@ -6,7 +6,7 @@
 	/*
 	Plugin Name: Region Halland Tree All Levels terapirekommendationer
 	Description: Front-end-plugin för hela siten som tree-menu
-	Version: 1.1.0
+	Version: 1.3.0
 	Author: Roland Hydén
 	License: GPL-3.0
 	Text Domain: regionhalland
@@ -72,7 +72,7 @@
 	            $tree[$row['ID']]['children'] = region_halland_tree_all_levels_terapirekommendationer_buildtree($data, $row['ID']);
 	        }
 	    }
-	    ksort($tree);
+	    //ksort($tree);
 	    return $tree;
 	}
 
