@@ -86,8 +86,11 @@ OBS! Justera så att du hämtar aktuell version.
 
 ## Versionhistorik
 
+### 1.4.0
+- Städat upp och kommenterat
+
 ### 1.3.0
-Byggt om sorteringsfunktionen
+- Byggt om sorteringsfunktionen
 
 ### 1.2.1
 - Justerade retur-array

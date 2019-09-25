@@ -6,7 +6,7 @@
 	/*
 	Plugin Name: Region Halland Tree All Levels terapirekommendationer
 	Description: Front-end-plugin för hela siten som tree-menu
-	Version: 1.3.0
+	Version: 1.4.0
 	Author: Roland Hydén
 	License: GPL-3.0
 	Text Domain: regionhalland
@@ -25,7 +25,7 @@
 		// Skapa databas koppling
 	 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-	 	// Hämta alla sidor
+	 	// Hämta alla sidor i bokstavordning
 	 	$sql = "SELECT ";
 		$sql .= "ID, ";
 		$sql .= "post_title, ";
@@ -34,11 +34,8 @@
 		$sql .= "WHERE ";
 		$sql .= "post_status = 'publish' ";
 		$sql .= "AND ";
-		$sql .= "post_type = 'page'";
-		$sql .= "AND ";
-		$sql .= "post_parent <> 0";
-		$sql .= "ORDER BY ";
-		$sql .= "menu_order";
+		$sql .= "post_type = 'page' ";
+		$sql .= "ORDER BY post_title";
 		$result = mysqli_query($conn, $sql);
 		$myData = array();
 		while($row = mysqli_fetch_assoc($result)) {
@@ -53,10 +50,14 @@
 	        ));
 		}
 
+		// Skapa träd
 		$myDataFinal = region_halland_tree_all_levels_terapirekommendationer_buildtree($myData);
+
+		// Returnera bara alla childs till 3913, dvs "Terapirekommendationer"
+		$myChildData = $myDataFinal['3913']['children'];
 		
 		// Returnera träd
-		return $myDataFinal;
+		return $myChildData;
 	}
 
 	// Funktion för att bygga träd utifrån array med parent/child
@@ -72,7 +73,6 @@
 	            $tree[$row['ID']]['children'] = region_halland_tree_all_levels_terapirekommendationer_buildtree($data, $row['ID']);
 	        }
 	    }
-	    //ksort($tree);
 	    return $tree;
 	}
 
